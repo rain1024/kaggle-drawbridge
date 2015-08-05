@@ -13,5 +13,4 @@ class ModelNaive(ModelSimple):
             [merge_key, 'device_id'])
         desktops_sample = desktops[['cookie_id', merge_key]].set_index([merge_key])
         merge_data = mobiles_sample.join(desktops_sample).reset_index(1)
-        print merge_data
         return merge_data
